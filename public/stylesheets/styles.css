@@ -6,7 +6,11 @@
 }
 
 body {
-    background-color: black;
+    background-color:rgb(49, 13, 66);
+}
+
+a {
+    color: rgb(205, 176, 218);
 }
 
 .cat-container {
