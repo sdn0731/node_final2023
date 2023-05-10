@@ -6,15 +6,15 @@ var axios = require('axios').default;
 app.use('/static', express.static("public"));
 app.set("view engine", "ejs");
 
-// Create "Random Comic Generator" Method
+// Create "Random Cat Generator" Method
 app.get('/', function(req, res){
-    let comicData = {}
-    // Generate Random Number (1-2682)
-    var num = Math.floor(Math.random() * (2682 + 1));
-    // Use Random Number to Generate Random Comic
-    axios.get('https://xkcd.com/' + num + '/info.0.json').then(function(response){
-        comicData = response.data
-        res.render('todo.ejs', {comicData: comicData});
+    // Create array
+    let catData = {}
+
+    // Get API data AND Set data in array
+    axios.get('https://api.thecatapi.com/v1/images/search').then(function(response){
+        catData = response.data[0]
+        res.render('todo.ejs', {catData: catData});
     })
 })
 

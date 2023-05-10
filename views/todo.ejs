@@ -10,17 +10,18 @@
 </head>
 <body>
     <!-- Create Display Container -->
-    <div class="comic-container">
+    <div class="cat-container">
         <h1>
             <!-- Display Comic Title -->
-            <%= "\"" + comicData.safe_title + "\"" %>
+            Random Cat Image
         </h1>
         <h4>
             <!-- Display Comic Date -->
-            <%= "Published: " + comicData.month + "/" + comicData.day + "/" + comicData.year %>
+            Filler Text
         </h4>
         <br>
         <!-- Display Comic -->
-        <img src="<%= comicData.img %>" alt="<%= comicData.alt %>" width="500px" height="500px" />
+        <img src="<%= catData.url %>" width="500" height="500" />
+        
     </div>
 </body>
