@@ -7,25 +7,29 @@ var axios = require('axios').default;
 app.use('/static', express.static("public"));
 app.set("view engine", "ejs");
 
-// Default Page - Random Cat Generator
+// Random Cat Generators
 app.get('/', function(req, res){
-    // Generate Random Image
 
-    // Initialize variables
-    let catData = {}
+    // Cat Image Generator
 
-    // Call API and retrieve cat image
-    axios.get('https://api.thecatapi.com/v1/images/search').then(function(response){
-        catData = response.data[0]
-    })
+        // Initialize variables
+        let catData = {}
 
-    // Initialize variables
-    let catFact = {}
+        // Call API and retrieve cat image
+        axios.get('https://api.thecatapi.com/v1/images/search').then(function(response){
+            catData = response.data[0]
+        })
 
-    axios.get('https://catfact.ninja/fact').then(function(response){
-        catFact = response.data
-        res.render('todo.ejs', {catData: catData, catFact: catFact})
-    })
+    // Cat Fact Generator
+
+        // Initialize variables
+        let catFact = {}
+
+        // Call API and retrieve cat fact
+        axios.get('https://catfact.ninja/fact').then(function(response){
+            catFact = response.data
+            res.render('todo.ejs', {catData: catData, catFact: catFact})
+        })
 
 })
 
